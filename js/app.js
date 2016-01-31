@@ -23,10 +23,11 @@ angular.module('myApp', ['firebase'])
         .then(function(user) {
             //Success callback
             console.log('Authentication successful');
-            $window.location.href = 'file:///C:/Users/SweMon/Desktop/MySMU/Cloud%20Computing/delivery/index.html';
+            $window.location.href = 'http://swemon.github.io/sparkphoton/profile.html';
         }, function(error) {
             //Failure callback
             console.log('Authentication failure');
+            $window.location.href = 'http://swemon.github.io/sparkphoton/log_in.html';
         });
     };
 
@@ -45,9 +46,11 @@ angular.module('myApp', ['firebase'])
                     .then(function() {
                         // do things if success
                         console.log('User creation success');
+                        $window.location.href = 'http://swemon.github.io/sparkphoton/log_in.html';
                     }, function(error) {
                         // do things if failure
                         console.log(error);
+                        $window.location.href = 'http://swemon.github.io/sparkphoton/register.html';
                     });
             }
     };

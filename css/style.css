@@ -27,7 +27,7 @@ img {
 	background: url(../images/bg-strips.png) repeat-x;
 }
 #navigation #secondary li:first-child a, #connect li a {
-	background: url(../images/icons.png) no-repeat;
+	/*background: url(../images/icons.png) no-repeat; */
 }
 #adbox a.button,#search .button, #stocks ul li a.preview span.icon, #checkout table tr td a.plus, #checkout table tr td a.minus {
 	background: url(../images/buttons.png) no-repeat;
@@ -86,7 +86,7 @@ img {
 }
 #navigation ul#primary {
 	float: left;
-	margin-right: 80px;
+	margin-right: 320px;
  *width: 560px;/** Needed for IE7 **/
 }
 #navigation #primary li.highlight a {

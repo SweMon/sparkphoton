@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
-<html>
+<html ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Spark Photon</title>
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-<body>
-	<script type="text/javascript">
-	var myDataRef = new Firebase('https://sparkphoton.firebaseio.com/');
-	$('#password').keypress(function (e){
-		if (e.keyCode == 13) {
-          var name = $('#name').val();
-          var password = $('#password').val();
-        myDataRef.set({name: name, value: password});
-          
-	}
-	 });
+	<script type="text/javascript" src='js/angular.min.js'></script>
 
 
-	 myDataRef.on('child_added', function(snapshot) {
-       	
-      });
+
+<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+<!-- <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script> -->
+<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
 
 	
-	</script>
+	<script type="text/javascript" src='js/app.js'></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body ng-controller="AuthController">
 	<div id="background">
 		<div id="page">
 			<div id="header">
@@ -34,36 +26,23 @@
 				</div>
 				<div id="navigation">
 					<ul id="primary">
-						<li >
-							<a href="index.html">Home</a>
-						</li>
-						<li class="selected">
-							<a href="about_us.html">About Us</a>
-						</li>
-						<!--
-						<li>
-							<a href="new.html">New Arrivals</a>
-						</li>
-					-->
-						<li>
-							<a href="for_owner.html">For Owner</a>
-						</li>
-						<li>
-							<a href="for_driver.html">For Driver</a>
-						</li>
-						<li>
-							<a href="faq.html">Faq</a>
-						</li>
-						<li class="highlight">
-							<a href="sale.html">Contact Us</a>
-						</li>
+						 <li >
+			              <a href="index.html">Home</a>
+			            </li>
+			            <li>
+			              <a href="about_us.html">About Us</a>
+			            </li>
+			            <li>
+			              <a href="for_driver.html">Requests</a>
+			            </li>
+			            <li>
+			              <a href="faq.html">Faq</a>
+			            </li>
 					</ul>
 					<ul id="secondary">
+						
 						<li>
-							<a href="checkout.html">Cart</a>
-						</li>
-						<li>
-							<a href="index.html">Login</a> | <a href="index.html">Signup</a>
+							<a href="log_in.html">Login</a> | <a href="register.html">Signup</a>
 						</li>
 					</ul>
 				</div>
@@ -71,21 +50,23 @@
 			<div id="contents">
 				<div>
 					<div id="search">
-						<h3>Quick Search</h3>
+						<h3>Sign In</h3>
 						<p>
 							Find out here where you can get your extra cash!!!
 						</p>
 						<form>
 							<ul>
 								<li>
-									 <input type='text' id='name' placeholder='Name'>
+									 <input type='text' id='name' placeholder='Name' ng-model="credentials.email">
 								</li>
+								
+									
 								<li>
-									 <input type='text' id='password' placeholder='Password'>
+									 <input type='text' id='password' placeholder='Password' ng-model="credentials.password">
 								</li>
 								
 							</ul>
-							<input type="submit" value="Log In" class="button">
+							<input type="submit" ng-click="SignIn($event)" value="Log In"  class="button">
 						</form>
 					</div>
 					<h4><span>About Us</span></h4>
