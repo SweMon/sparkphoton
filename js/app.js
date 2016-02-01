@@ -56,5 +56,30 @@ angular.module('myApp', ['firebase'])
     };
 
 
+     var myDataRef = new Firebase('https://sparkphoton.firebaseio.com/');
+
+    $scope.chat = function(event) {
+    event.preventDefault();  // To prevent form refresh
+    var name = $scope.data.name;
+    var text = $scope.data.message;
+      
+      console.log("usernmae");  
+
+       myDataRef.push({name: name, message: text});
+      //  $('#messageInput').val('');
+
+          myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.message);
+      });
+   
+   
+    };
+    
+   function displayChatMessage(name, text) {
+        $('<span/><br/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+
 });
  

@@ -460,12 +460,12 @@ ul.items li a span {
 	display: inline-block;
 	width: 900px;
 	margin-bottom: 60px;
-	padding: 42px 12px 0;
+	padding: 22px 12px 0;
 }
 #product div.section {
 	float: left;
-	width: 438px;
-	padding-left: 12px;
+	width: 270px;
+	padding-left: 5px;
 }
 #product div.section ul {
 	float: right;
@@ -481,8 +481,8 @@ ul.items li a span {
 	filter:alpha(opacity=80);
 }
 #product div.section div {
-	height: 316px;
-	width: 317px;
+	height: 200px;
+	width: 200px;
 	border: 1px solid #d2cecf;
 }
 #product div.section h2 {
@@ -502,7 +502,7 @@ ul.items li a span {
 	color: #636a86;
 	font-size: 14px;
 	line-height: 24px;
-	margin: 0 62px 0 0;
+	margin: 0 22px 0 0;
 	padding-bottom: 36px;
 }
 #product div.section p a {
