@@ -23,7 +23,7 @@ angular.module('myApp', ['firebase'])
         .then(function(user) {
             //Success callback
             console.log('Authentication successful');
-            $window.location.href = 'http://swemon.github.io/sparkphoton/profile.html';
+            $window.location.href = '/profile.html';
         }, function(error) {
             //Failure callback
             console.log('Authentication failure');
@@ -75,7 +75,7 @@ angular.module('myApp', ['firebase'])
    
    
     };
-    
+
    function displayChatMessage(name, text) {
         $('<span/><br/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
